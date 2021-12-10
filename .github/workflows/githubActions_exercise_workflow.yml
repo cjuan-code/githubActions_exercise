@@ -1,0 +1,10 @@
+name: githubActions_exercise_workflow
+on: [push]
+jobs:
+  Linter_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: run linter
+        run: npm install && npm lint
