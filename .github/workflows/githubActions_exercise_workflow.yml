@@ -54,6 +54,6 @@ jobs:
           git config user.name "actionsbot"
           git add .
           git commit -m "Change readme badge"
-          git remote set-url origin https://cjuan-code:${{ secrets.TOKEN_FOR_MEME }}@github.com/cjuan-code/githubActions_examples.git
+          git remote set-url origin https://cjuan-code:${{ secrets.TOKEN }}@github.com/cjuan-code/githubActions_exercise.git
           git push
       
