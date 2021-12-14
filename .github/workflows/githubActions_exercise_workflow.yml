@@ -48,4 +48,12 @@ jobs:
         uses: ./.github/actions
         with:
           result: ${{ steps.genoutput.outputs.cypress_outcome }}
+      - name: commit changes on readme
+        run: |
+          git config user.email "actionsbot@github.com"
+          git config user.name "actionsbot"
+          git add .
+          git commit -m "Change readme badge"
+          git remote set-url origin https://cjuan-code:${{ secrets.TOKEN_FOR_MEME }}@github.com/cjuan-code/githubActions_examples.git
+          git push
       
