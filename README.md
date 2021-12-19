@@ -51,12 +51,23 @@ Una vez tengamos la aplicación, crearemos el nuevo job, con los siguientes step
  * Por último, el quinto, realiza el commit de los cambios en el README en caso de haberlos.
 ![add_badge_workflow](https://user-images.githubusercontent.com/79716922/146691354-acd7fe97-574a-4015-80a8-be0f0116aea1.png)
 
-
+Realizamos un push y podemos ver que funciona.
 ![11](https://user-images.githubusercontent.com/79716922/146690097-4dc7dabf-e68e-4a10-a4fd-15de2bb2eb1c.png)
-![12](https://user-images.githubusercontent.com/79716922/146690098-b89edec9-5e33-4c32-bd1f-ee412e586f70.png)
+
+## Afegir les caps de success i fail
+
+Pasamos al siguiente job, que realiza el deploy en Vercel.
+
+Pero primero debemos ejecutar el siguiente comando para poder acceder al id del proyecto y al de org en la carpeta .vercel que se nos creará en la raiz del proyecto. 
+![vercel_link](https://user-images.githubusercontent.com/79716922/146690107-804960c4-08ab-402d-84ab-c86cc46049d6.png)
+
+Una vez los tengamos crearemos los secrets en el repositorio.
+![tokens_vercel](https://user-images.githubusercontent.com/79716922/146690106-b0b36706-245b-4966-baaf-d4e38e1fa39b.png)
+
+Ahora, añadimos el job al 
+![workflow_deploy_vercel](https://user-images.githubusercontent.com/79716922/146691587-dcd093a8-9cb9-4858-8d49-5bbbd5b7d01d.png)
+
 ![check_deploy_vercel](https://user-images.githubusercontent.com/79716922/146690099-53249a42-4b75-4349-8a21-7752334654ce.png)
 ![resultado_send_mail](https://user-images.githubusercontent.com/79716922/146690101-fdd3db9d-612c-4a32-b47e-39538de2d80d.png)
 ![secrets_mail](https://user-images.githubusercontent.com/79716922/146690103-193477f2-292d-4f84-8e72-e84d617db159.png)
 ![test_action_deploy_action_gh](https://user-images.githubusercontent.com/79716922/146690105-d0962a43-43fd-42f1-895f-b64502c44f47.png)
-![tokens_vercel](https://user-images.githubusercontent.com/79716922/146690106-b0b36706-245b-4966-baaf-d4e38e1fa39b.png)
-![vercel_link](https://user-images.githubusercontent.com/79716922/146690107-804960c4-08ab-402d-84ab-c86cc46049d6.png)
