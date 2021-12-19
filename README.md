@@ -27,14 +27,24 @@ Al realizar un push, podremos ver que hay algunos errores.
 Una vez corregidos los errores, realizamos un nuevo push y podemos comprobar que se ha ejecutado correctamente.
 ![4](https://user-images.githubusercontent.com/79716922/146690087-6d0fdfd8-81a0-4755-827c-dd23c3223004.png)
 
-Ahora, añadiremos un nuevo job, que se encargarà de realizar test utilizando cypress.
+Ahora, añadiremos un nuevo job, que se encargará de realizar test utilizando cypress. Este job tendrá diversos steps:
+  * El primero realiza un checkout del código.
+  * El segundo realiza el test con cypress.
+  * El tercero introduce el resultado a un archivo.
+  * El cuarto y último, realiza un upload de un artifact con el archivo del resultado.
 ![5](https://user-images.githubusercontent.com/79716922/146690089-76a388d1-f3b5-46a0-82f3-c224d7729a20.png)
 
+Al realizar un push podemos ver que la action se ha realizado correctamente.
 ![6](https://user-images.githubusercontent.com/79716922/146690091-aa1f59fa-2614-4972-91fb-5d814df68c0a.png)
-![7](https://user-images.githubusercontent.com/79716922/146690092-a28b8170-8cda-4fe8-b8a3-de5e6793976e.png)
+
+Antes de seguir con el siguiente job, crearemos un nuevo secreten el repositorio que contendrá el token de developer de GitHub que utilizaremos posteriormente.
 ![8](https://user-images.githubusercontent.com/79716922/146690094-ed9bb6f8-bb0e-4025-ab5a-d66992c0f8e6.png)
-![9 (abans q 8)](https://user-images.githubusercontent.com/79716922/146690095-ad19e806-6f66-456f-9024-6233ab4c6d67.png)
+
+Lo siguiente que debemos hacer es crear la app que cambiará el readme añadiendo un badge dependiendo del resultado del test de cypress.
 ![10 (abans q 8)](https://user-images.githubusercontent.com/79716922/146690096-828d650f-1b86-42ee-a23a-4aa1d8f7008f.png)
+
+
+![9 (abans q 8)](https://user-images.githubusercontent.com/79716922/146690095-ad19e806-6f66-456f-9024-6233ab4c6d67.png)
 ![11](https://user-images.githubusercontent.com/79716922/146690097-4dc7dabf-e68e-4a10-a4fd-15de2bb2eb1c.png)
 ![12](https://user-images.githubusercontent.com/79716922/146690098-b89edec9-5e33-4c32-bd1f-ee412e586f70.png)
 ![check_deploy_vercel](https://user-images.githubusercontent.com/79716922/146690099-53249a42-4b75-4349-8a21-7752334654ce.png)
