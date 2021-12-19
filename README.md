@@ -1,9 +1,3 @@
-### Example of nextjs project using Cypress.io
-
-<!---Start place for the badge -->
-RESULTADO DE LOS ÚLTIMOS TESTS [![Cypress.io](https://img.shields.io/badge/test-failure-red)](https://www.cypress.io/)
-<!---End place for the badge -->
-
 ## Que son las Github Actions ?
 
 GitHub Actions permite crear workflows que se puedan utilizar para compilar, testear y desplegar código. Además, da la posibilidad de crear flujos de integración y despliegue continuo dentro de nuestro repositorio.
@@ -54,7 +48,10 @@ Una vez tengamos la aplicación, crearemos el nuevo job, con los siguientes step
 Realizamos un push y podemos ver que funciona.
 ![11](https://user-images.githubusercontent.com/79716922/146690097-4dc7dabf-e68e-4a10-a4fd-15de2bb2eb1c.png)
 
-## Afegir les caps de success i fail
+![success](https://user-images.githubusercontent.com/79716922/146692572-96ca3fa3-6124-4ca4-b206-28f6c5b5d461.png)
+
+En caso de que los test en cypress fallen, nos mostrará el badge de que han fallado.
+![failure](https://user-images.githubusercontent.com/79716922/146692606-eafc4c83-5d58-4edc-b74c-576c74527722.png)
 
 Pasamos al siguiente job, que realiza el deploy en Vercel.
 
@@ -91,4 +88,6 @@ Ahora que ya esta la action creada añadiremos el job.
 Realizamos un push, y cuando se acabe de ejecutar el workflow miramos el correo y podemos ver que tenemos los resultados de los jobs del workflow.
 ![mail](https://user-images.githubusercontent.com/79716922/146692096-eb60ab89-a0bf-45d7-8749-4ab3a41d65b1.png)
 
-
+<!---Start place for the badge -->
+RESULTADO DE LOS ÚLTIMOS TESTS [![Cypress.io](https://img.shields.io/badge/test-failure-red)](https://www.cypress.io/)
+<!---End place for the badge -->
