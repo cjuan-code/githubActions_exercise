@@ -57,7 +57,7 @@ jobs:
           git commit -m "Change readme badge"
           git remote set-url origin https://cjuan-code:${{ secrets.TOKEN }}@github.com/cjuan-code/githubActions_exercise.git
           git push
-          ; fi
+          fi
           
   
   Deploy_job:
