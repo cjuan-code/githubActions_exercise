@@ -89,5 +89,6 @@ Ahora que ya esta la action creada añadiremos el job.
 ![send_mail_workflow](https://user-images.githubusercontent.com/79716922/146691755-c1142dae-46d0-4680-87e3-7e2158e045d0.png)
 
 Realizamos un push, y cuando se acabe de ejecutar el workflow miramos el correo y podemos ver que tenemos los resultados de los jobs del workflow.
-![resultado_send_mail](https://user-images.githubusercontent.com/79716922/146690101-fdd3db9d-612c-4a32-b47e-39538de2d80d.png)
+![mail](https://user-images.githubusercontent.com/79716922/146692096-eb60ab89-a0bf-45d7-8749-4ab3a41d65b1.png)
+
 
