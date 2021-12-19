@@ -45,7 +45,7 @@ jobs:
         id: genoutput
         run: echo "::set-output name=cypress_outcome::$(cat result.txt)"
       - name: modify readme
-        uses: ./.github/actions
+        uses: ./.github/actions/badge_action
         with:
           result: ${{ steps.genoutput.outputs.cypress_outcome }}
       - name: commit changes on readme
@@ -69,4 +69,17 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
-      
+  
+  Notification_job:
+    needs: [Linter_job, Cypress_job, Add_badge_job, Deploy_job]
+    runs-on: ubuntu-latest
+    steps:
+      - name: send mail
+        uses: ./.github/actions/send_mail
+        with:
+          postmail_secret: ${{ secrets.POSTMAIL_SECRET }}
+          linter_result: ${{ needs.Linter_job.result }}
+          cypress_result: ${{ needs.Add_badge_job.outputs.cypress_outcome }}
+          add_badge_result: ${{ needs.Add_badge_job.result }}
+          deploy_result: ${{ needs.Deploy_job.result }}
+
