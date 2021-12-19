@@ -43,8 +43,15 @@ Antes de seguir con el siguiente job, crearemos un nuevo secreten el repositorio
 Lo siguiente que debemos hacer es crear la app que cambiará el readme añadiendo un badge dependiendo del resultado del test de cypress.
 ![10 (abans q 8)](https://user-images.githubusercontent.com/79716922/146690096-828d650f-1b86-42ee-a23a-4aa1d8f7008f.png)
 
+Una vez tengamos la aplicación, crearemos el nuevo job, con los siguientes steps:
+ * El primero realiza un checkout del código.
+ * El segundo realiza la descarga del artifact que hemos subido en el job anterior.
+ * El tercero genera un output utilizando el contenido del archivo del artifact.
+ * El cuarto se encarga de modificar el readme utilizando la aplicación de la captura anterior. Utilzaremos una action custom que tendrá un input "result" que almacenará el contenido del output generado en el step anterior.
+ * Por último, el quinto, realiza el commit de los cambios en el README en caso de haberlos.
+![add_badge_workflow](https://user-images.githubusercontent.com/79716922/146691354-acd7fe97-574a-4015-80a8-be0f0116aea1.png)
 
-![9 (abans q 8)](https://user-images.githubusercontent.com/79716922/146690095-ad19e806-6f66-456f-9024-6233ab4c6d67.png)
+
 ![11](https://user-images.githubusercontent.com/79716922/146690097-4dc7dabf-e68e-4a10-a4fd-15de2bb2eb1c.png)
 ![12](https://user-images.githubusercontent.com/79716922/146690098-b89edec9-5e33-4c32-bd1f-ee412e586f70.png)
 ![check_deploy_vercel](https://user-images.githubusercontent.com/79716922/146690099-53249a42-4b75-4349-8a21-7752334654ce.png)
