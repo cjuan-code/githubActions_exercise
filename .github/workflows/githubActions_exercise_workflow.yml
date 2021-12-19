@@ -85,7 +85,7 @@ jobs:
         with:
           postmail_secret: ${{ secrets.POSTMAIL_SECRET }}
           linter_result: ${{ needs.Linter_job.result }}
-          cypress_result: ${{ needs.Add_badge_job.outputs.cypress_outcome }}
+          cypress_result: ${{ needs.Add_badge_job.result }}
           add_badge_result: ${{ needs.Add_badge_job.result }}
           deploy_result: ${{ needs.Deploy_job.result }}
 
