@@ -70,9 +70,24 @@ Ahora, añadimos el job al workflow, este utiliza la action amondnet/vercel-acti
 Realizamos un push, y podemos ver que ha funcionado.
 ![test_action_deploy_action_gh](https://user-images.githubusercontent.com/79716922/146690105-d0962a43-43fd-42f1-895f-b64502c44f47.png)
 
-
+Accedemos a la URL de vercel y podemos ver que está la aplicación desplegada.
 ![check_deploy_vercel](https://user-images.githubusercontent.com/79716922/146690099-53249a42-4b75-4349-8a21-7752334654ce.png)
 
+Por último, añadiremos un nuevo job que nos enviará un correo con todos los resultados de los jobs anteriores utilizando una action custom.
 
-![resultado_send_mail](https://user-images.githubusercontent.com/79716922/146690101-fdd3db9d-612c-4a32-b47e-39538de2d80d.png)
+Antes de ello, crearemos un nuevo secret que contendrá el secret de postmail.
 ![secrets_mail](https://user-images.githubusercontent.com/79716922/146690103-193477f2-292d-4f84-8e72-e84d617db159.png)
+
+Esta es la app que se encarga de enviar el correo con todos los resultados.
+![app_send_mail](https://user-images.githubusercontent.com/79716922/146691885-79ff3d76-dd01-4c7b-be45-c28b34b98e04.png)
+
+Una vez tenemos la app crearemos la action, que es la siguiente:
+ * Tendrá 5 inputs donde almacenaremos los resultados de los jobs y el secret de postmail.
+![send_mail_action](https://user-images.githubusercontent.com/79716922/146691947-e225e6a0-bd68-43dd-a411-e43e2a742c1c.png)
+
+Ahora que ya esta la action creada añadiremos el job.
+![send_mail_workflow](https://user-images.githubusercontent.com/79716922/146691755-c1142dae-46d0-4680-87e3-7e2158e045d0.png)
+
+Realizamos un push, y cuando se acabe de ejecutar el workflow miramos el correo y podemos ver que tenemos los resultados de los jobs del workflow.
+![resultado_send_mail](https://user-images.githubusercontent.com/79716922/146690101-fdd3db9d-612c-4a32-b47e-39538de2d80d.png)
+
